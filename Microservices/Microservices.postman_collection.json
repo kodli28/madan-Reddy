@@ -1,0 +1,409 @@
+{
+	"info": {
+		"_postman_id": "3a17af81-926a-41f1-8c92-c08071e982cf",
+		"name": "Microservices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "49248721",
+		"_collection_link": "https://kodli2896-4913055.postman.co/workspace/kodli2896's-Workspace~e990b093-682d-4744-87ff-1e1ba9bd1717/collection/49248721-3a17af81-926a-41f1-8c92-c08071e982cf?action=share&source=collection_link&creator=49248721"
+	},
+	"item": [
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"satwik\",\r\n    \"email\":\"satwik.smg@gmail.com\",\r\n    \"mobileNumber\": \"9513868091\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/account/createaccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"account",
+								"createaccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchAccounts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/account/fetch?mobileNumber=9513868091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"account",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "9513868091"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateaccount",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"accountsDto\": {\r\n        \"accountNumber\": 1870214266,\r\n        \"accountType\": \"Savings\",\r\n        \"branchAddress\": \"123 Main Street, New York\"\r\n    },\r\n    \"customerDto\": {\r\n        \"customerId\": null,\r\n        \"name\": \"satwik kodli 3 shivanand\",\r\n        \"email\": \"satwik.smg@gmail2.com\",\r\n        \"mobileNumber\": \"9513868091\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/account/updateaccount",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"account",
+								"updateaccount"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Card",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/card/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"card",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createcard",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/card/createcard?mobileNumber=9513868091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"card",
+								"createcard"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "9513868091"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetchcard",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9091/card/fetchcard?mobileNumber=9513868091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"card",
+								"fetchcard"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "9513868091"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatecard",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNumber\": \"9513868091\",\r\n    \"cardNumber\": \"100814281152\",\r\n    \"cardType\": \"Debit Card\",\r\n    \"totalLimit\": 100000,\r\n    \"amountUsed\": 0,\r\n    \"availableAmount\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9091/card/updatecard?mobileNumber=9513868091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"card",
+								"updatecard"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "9513868091"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNumber\": \"9513868091\",\r\n    \"cardNumber\": \"100814281152\",\r\n    \"cardType\": \"Debit Card\",\r\n    \"totalLimit\": 100000,\r\n    \"amountUsed\": 0,\r\n    \"availableAmount\": 100000\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9091/card/delete?mobileNumber=9513868091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9091",
+							"path": [
+								"card",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "9513868091"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Loan",
+			"item": [
+				{
+					"name": "Health",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNumber\": \"9513868091\",\r\n    \"cardNumber\": \"100814281152\",\r\n    \"cardType\": \"Debit Card\",\r\n    \"totalLimit\": 100000,\r\n    \"amountUsed\": 0,\r\n    \"availableAmount\": 100000\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9092/loan/health",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"loan",
+								"health"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createloan",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNumber\": \"9513868091\",\r\n    \"cardNumber\": \"100814281152\",\r\n    \"cardType\": \"Debit Card\",\r\n    \"totalLimit\": 100000,\r\n    \"amountUsed\": 0,\r\n    \"availableAmount\": 100000\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9092/loan/create?mobileNumber=9513868091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"loan",
+								"create"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "9513868091"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "fetch",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNumber\": \"9513868091\",\r\n    \"cardNumber\": \"100814281152\",\r\n    \"cardType\": \"Debit Card\",\r\n    \"totalLimit\": 100000,\r\n    \"amountUsed\": 0,\r\n    \"availableAmount\": 100000\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9092/loan/fetch?mobileNumber=9513868091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"loan",
+								"fetch"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "9513868091"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNumber\": \"9513868091\",\r\n    \"loanNumber\": \"100554230966\",\r\n    \"loanType\": \"Housing Loan\",\r\n    \"totalLoan\": 100000,\r\n    \"amountPaid\": 0,\r\n    \"outstandingAmount\": 100000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9092/loan/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"loan",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mobileNumber\": \"9513868091\",\r\n    \"cardNumber\": \"100814281152\",\r\n    \"cardType\": \"Debit Card\",\r\n    \"totalLimit\": 100000,\r\n    \"amountUsed\": 0,\r\n    \"availableAmount\": 100000\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:9092/loan/delete?mobileNumber=9513868091",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9092",
+							"path": [
+								"loan",
+								"delete"
+							],
+							"query": [
+								{
+									"key": "mobileNumber",
+									"value": "9513868091"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
